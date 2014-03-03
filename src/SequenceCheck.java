@@ -28,20 +28,20 @@ public class SequenceCheck {
 		// note that a "sequence" is implied to be sequential. No sorting is done for simplicity.
 		while (sc.hasNextInt())
 			sequence.add(sc.nextInt());
-	    sc.close();
+		sc.close();
 		return sequence;
 	}
 
 	private static void findNumberNotIn(ArrayList<Integer> sequence) {
 		int match = 0;
-		int first = sequence.get(0);
-		int size = sequence.size();
+		int first = sequence.get(0); // set up a var to hold the start of the sequence value
+		int size = sequence.size(); // size of the AL. Not super necessary but simplifies loop
 		for (int i = 0; i < size; i++)
 		{
-			if ((first + i) != sequence.get(i)) {
-			    match = (first + i);
-			    break;
-			}
+			if ((first + i) != sequence.get(i)) { // if the initial value + iterator not equal the intial value..
+			    match = (first + i); // assign the match
+			    break; // end
+			} // otherwise run it again
 		}
 		System.out.println(match + " is not in the sequence.");
 	}
